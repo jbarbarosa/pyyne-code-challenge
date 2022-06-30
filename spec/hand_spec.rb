@@ -1,4 +1,4 @@
-require 'hand'
+require_relative '../hand'
 
 RSpec.describe Hand do
   hand = Hand.new
@@ -28,10 +28,10 @@ RSpec.describe Hand do
   describe 'Given two hands' do
     describe 'And One being a High Card' do
       player1 = %w[2C 4C KH 7D 9H]
-      
+
       describe 'And Two being a Pair' do
         player2 = %w[5D 2D 2H AC 4C]
-      
+
         it 'should return Pair wins' do
           expect(hand.compare player1, player2).to eq 'pair'
         end
